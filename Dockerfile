@@ -25,19 +25,12 @@ WORKDIR /app
 # Install pnpm
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
-# Create non-root user
-RUN addgroup --system --gid 1001 nodejs && \
-    adduser --system --uid 1001 sveltekit
-
 # Copy built assets from builder
-COPY --from=builder --chown=sveltekit:nodejs /app/build ./build
-COPY --from=builder --chown=sveltekit:nodejs /app/package.json /app/pnpm-lock.yaml ./
+COPY --from=builder /app/build ./build
+COPY --from=builder /app/package.json /app/pnpm-lock.yaml ./
 
 # Install production dependencies only
 RUN pnpm install --prod --frozen-lockfile
-
-# Use non-root user
-USER sveltekit
 
 EXPOSE 3000
 ENV PORT=3000

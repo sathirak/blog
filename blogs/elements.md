@@ -8,7 +8,7 @@ categories:
 coverImage: "/images/blog/elements.png"
 coverWidth: 16
 coverHeight: 9
-status: "published"
+status: "draft"
 excerpt: A comprehensive guide showing how different markdown elements are rendered.
 ---
 
