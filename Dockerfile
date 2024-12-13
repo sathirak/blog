@@ -25,9 +25,9 @@ WORKDIR /app
 # Install pnpm
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
-# Create non-root user
-RUN addgroup --system --gid 1001 nodejs && \
-    adduser --system --uid 1001 sveltekit
+# Create non-root user with compliant UID
+RUN addgroup --system --gid 10001 nodejs && \
+    adduser --system --uid 10001 sveltekit
 
 COPY --from=builder --chown=sveltekit:nodejs /app/build ./build
 COPY --from=builder --chown=sveltekit:nodejs /app/package.json /app/pnpm-lock.yaml ./
