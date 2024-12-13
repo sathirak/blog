@@ -31,7 +31,7 @@ RUN addgroup --system --gid 1001 nodejs && \
 
 # Copy built assets from builder
 COPY --from=builder --chown=sveltekit:nodejs /app/build ./build
-COPY --from=builder --chown=sveltekit:nodejs /app/package.json ./
+COPY --from=builder --chown=sveltekit:nodejs /app/package.json /app/pnpm-lock.yaml ./
 
 # Install production dependencies only
 RUN pnpm install --prod --frozen-lockfile
