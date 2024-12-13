@@ -1,35 +1,26 @@
-FROM node:22-slim AS builder
+FROM node:22-alpine AS builder
 
-# Install pnpm
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
 WORKDIR /app
 
-# Copy package files
 COPY package.json pnpm-lock.yaml* ./
 
-# Install dependencies
 RUN pnpm install --frozen-lockfile
 
-# Copy source files
 COPY . .
 
-# Build the application
 RUN pnpm run build
 
-# Production stage
-FROM node:22-slim AS runner
+FROM node:22-alpine AS runner
 
 WORKDIR /app
 
-# Install pnpm
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
-# Copy built assets from builder
 COPY --from=builder /app/build ./build
 COPY --from=builder /app/package.json /app/pnpm-lock.yaml ./
 
-# Install production dependencies only
 RUN pnpm install --prod --frozen-lockfile
 
 EXPOSE 3000
