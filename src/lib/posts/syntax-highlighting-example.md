@@ -16,10 +16,9 @@ excerpt: This post shows you how syntax highlighting works here.
 
 mdsvex has automatic, built-in syntax highlighting with [Prism.js](https://prismjs.com/); just include the language name after the triple backticks, like so:
 
-```
-\```css
+
+```css
 /* Your CSS here */
-\```
 ```
 
 And that will render just like so:

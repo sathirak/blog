@@ -12,7 +12,7 @@
 </svelte:head>
 
 <section class="flex flex-col gap-8 mx-10 md:mx-24 my-16">
-	<h1>RECENT BLOGS</h1>
+	<h1 class=" uppercase">Recent Blogs</h1>
 
 	<PostsList posts={data.posts} />
 

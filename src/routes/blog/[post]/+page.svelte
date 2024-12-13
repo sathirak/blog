@@ -33,27 +33,30 @@
 			{/if}
 		</div>
 		<img
-			class="w-full rounded-lg shadow-lg mb-8"
+			class="w-full shadow-lg mb-8 object-cover"
 			src={coverImage}
 			alt=""
-			style="aspect-ratio: {coverWidth} / {coverHeight};"
+			style="aspect-ratio: 1 / 1;"
 			width={coverWidth}
 			height={coverHeight}
 		/>
 	</section>
 
-	<main class="prose prose-slate mx-auto 
+	<main
+		class="prose prose-slate mx-auto
 		prose-headings:font-medium prose-headings:tracking-tight
 		prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
 		prose-p:text-lg prose-p:leading-relaxed prose-p:my-6
+		prose-p:font-light
 		prose-img:rounded-md prose-img:shadow-md
 		prose-blockquote:text-lg prose-blockquote:border-l-2 prose-blockquote:border-slate-300 prose-blockquote:pl-4
 		prose-code:text-sm prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
 		prose-pre:bg-slate-900
-		prose-a:text-blue-600 prose-a:no-underline hover:prose-a:text-blue-800
+		prose-a:text-cyan-600 prose-a:no-underline hover:prose-a:text-cyan-800
 		max-w-none
 		dark:prose-invert dark:prose-blockquote:border-slate-700
-		dark:prose-code:bg-slate-800">
+		dark:prose-code:bg-slate-800"
+	>
 		<svelte:component this={PostContent} />
 	</main>
 
