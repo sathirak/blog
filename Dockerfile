@@ -35,8 +35,8 @@ COPY --from=builder --chown=sveltekit:nodejs /app/package.json /app/pnpm-lock.ya
 # Install production dependencies only
 RUN pnpm install --prod --frozen-lockfile
 
-# Use non-root user
-USER sveltekit
+# Use numeric UID instead of username
+USER 10001
 
 EXPOSE 3000
 ENV PORT=3000
