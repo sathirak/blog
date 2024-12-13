@@ -7,7 +7,7 @@ categories:
   - "debian"
 coverWidth: 16
 coverHeight: 9
-status: "published"
+status: "drafts"
 excerpt: A comprehensive guide showing how different markdown elements are rendered.
 ---
 <!-- [Photo by DSD](https://www.pexels.com/photo/selective-focus-photography-of-two-penguins-689784/)  -->
