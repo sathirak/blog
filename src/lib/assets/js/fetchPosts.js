@@ -3,7 +3,7 @@ import { postsPerPage } from '$lib/config'
 const fetchPosts = async ({ offset = 0, limit = postsPerPage, category = '' } = {}) => {
 
 	const posts = await Promise.all(
-		Object.entries(import.meta.glob('/src/lib/posts/*.md')).map(async ([path, resolver]) => {
+		Object.entries(import.meta.glob('../../../../blogs/*.md')).map(async ([path, resolver]) => {
 			const { metadata } = await resolver()
 			const slug = path.split('/').pop().slice(0, -3)
 			return { ...metadata, slug }
@@ -24,17 +24,17 @@ const fetchPosts = async ({ offset = 0, limit = postsPerPage, category = '' } = 
 		sortedPosts = sortedPosts.slice(0, limit)
 	}
 
-	sortedPosts = sortedPosts.map(post => ({
-		title: post.title,
-		slug: post.slug,
-		excerpt: post.excerpt,
-		coverImage: post.coverImage,
-		coverWidth: post.coverWidth, 
-		coverHeight: post.coverHeight,
-		date: post.date,
-		status: post.status,
-		categories: post.categories,
-	}))
+	sortedPosts = sortedPosts
+		.filter(post => post.status === 'published')
+		.map(post => ({
+			title: post.title,
+			slug: post.slug,
+			excerpt: post.excerpt,
+			coverWidth: post.coverWidth, 
+			coverHeight: post.coverHeight,
+			date: post.date,
+			categories: post.categories,
+		}))
 
 	return {
 		posts: sortedPosts

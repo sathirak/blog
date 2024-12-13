@@ -23,6 +23,7 @@ const config = {
 	],
 
 	kit: {
+		alias:{ $blogs: '/blogs' },
 		appDir: 'app',
 		adapter: adapter(),
 		prerender: {

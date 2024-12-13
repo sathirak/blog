@@ -2,7 +2,7 @@
 <script>
 	export let data;
 
-	const { title, excerpt, date, updated, coverImage, coverWidth, coverHeight, categories } =
+	const { title, excerpt, date, updated, coverWidth, coverHeight, categories, slug } =
 		data.meta;
 	const { PostContent } = data;
 </script>
@@ -34,7 +34,7 @@
 		</div>
 		<img
 			class="w-full shadow-lg mb-8 object-cover"
-			src={coverImage}
+			src="/images/blog/main/{slug}.png"
 			alt=""
 			style="aspect-ratio: 1 / 1;"
 			width={coverWidth}
@@ -50,7 +50,8 @@
 		prose-p:font-light
 		prose-img:rounded-md prose-img:shadow-md
 		prose-blockquote:text-lg prose-blockquote:border-l-2 prose-blockquote:border-slate-300 prose-blockquote:pl-4
-		prose-code:text-sm prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
+		prose-code:text-sm prose-code:px-1.5 prose-code:py-0.5 prose-code:bg-slate-200 prose-code:rounded
+		prose-code:before:content-none prose-code:after:content-none
 		prose-pre:bg-slate-900
 		prose-a:text-cyan-600 prose-a:no-underline hover:prose-a:text-cyan-800
 		max-w-none
