@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-static'
+import adapter from "@sveltejs/adapter-node"
 import { mdsvex } from 'mdsvex'
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
@@ -23,7 +23,7 @@ const config = {
 	],
 
 	kit: {
-		alias:{ $blogs: '/blogs' },
+		alias: { $blogs: '/blogs' },
 		appDir: 'app',
 		adapter: adapter(),
 		prerender: {

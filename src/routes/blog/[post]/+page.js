@@ -4,9 +4,8 @@ export const load = async ({ params }) => {
 	try {
 		const post = await import(`../../../../blogs/${params.post}.md`)
 
-		// if (post.status !== 'published') {
-		// 	error(404, 'Post not found');
-		// 	return
+		// if (post.metadata.status !== 'published') {
+		// 	error(404);
 		// }
 
 		return {
