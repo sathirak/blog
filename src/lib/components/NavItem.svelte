@@ -17,6 +17,7 @@
 		{href}
 		on:click={maybeCloseMenu}
 		class:active={isCurrentPage}
+		class=" "
 		aria-current={isCurrentPage ? 'page' : false}
 	>
 		<slot />

@@ -10,6 +10,7 @@ categories:
 coverImage: "/images/linus-nylund-Q5QspluNZmM-unsplash.jpg"
 coverWidth: 16
 coverHeight: 9
+status: "published"
 excerpt: This post shows you how syntax highlighting works here.
 ---
 

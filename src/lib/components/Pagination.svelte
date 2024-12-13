@@ -9,28 +9,42 @@
 	$: pagesAvailable = Math.ceil(totalPosts / postsPerPage)
 
 	const isCurrentPage = (page) => page == currentPage
+
+	const hasPreviousPage = () => currentPage > 1
+    const hasNextPage = () => currentPage < pagesAvailable
 </script>
 
 <!-- For some reason, the pagination wasn't re-rendering properly during navigation without the #key block -->
 {#key currentPage}
 	{#if pagesAvailable > 1}
-		<nav aria-label="Pagination navigation" class="pagination">
-			<ul>
-				{#each Array.from({length: pagesAvailable}, (_, i) => i + 1) as page}
-					<li>
-						<a href="{path}/{page}" aria-current="{isCurrentPage(page)}">
-							<span class="sr-only">
-								{#if isCurrentPage(page)}
-									Current page: 
-								{:else}
-									Go to page 
-								{/if}
-							</span>
-							{page}
-						</a>
-					</li>
-				{/each}
+		<nav aria-label="Pagination navigation" class="w-full">
+			<ul class="flex gap-8 w-full justify-between">
+				<li>
+					<a 
+						href="{path}/{currentPage - 1}" 
+						aria-disabled="{!hasPreviousPage()}"
+						class:disabled="{!hasPreviousPage()}"
+					>
+						{"< Newer Posts"}
+					</a>
+				</li>
+				<li>
+					<a 
+						href="{path}/{currentPage + 1}" 
+						aria-disabled="{!hasNextPage()}"
+						class:disabled="{!hasNextPage()}"
+					>
+						{"Older Posts >"}
+					</a>
+				</li>
 			</ul>
 		</nav>
 	{/if}
 {/key}
+
+<style>
+    .disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+</style>

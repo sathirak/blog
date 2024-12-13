@@ -22,41 +22,53 @@
 	<!-- <meta name="twitter:image" content="https://yourdomain.com/image_path" /> -->
 </svelte:head>
 
-<article class="post">
-	<!-- You might want to add an alt frontmatter attribute. If not, leaving alt blank here works, too. -->
-	<img
-		class="cover-image"
-		src={coverImage}
-		alt=""
-		style="aspect-ratio: {coverWidth} / {coverHeight};"
-		width={coverWidth}
-		height={coverHeight}
-	/>
+<article class="max-w-2xl mx-auto px-4 py-12">
+	<section class="mb-12 text-center">
+		<h1 class="text-4xl md:text-3xl font-medium uppercase mb-4 tracking-tight">{title}</h1>
+		<div class="text-slate-600 dark:text-slate-400 mb-8 text-sm tracking-wide uppercase">
+			{date}
+			{#if updated !== date}
+				<span class="mx-2">•</span>
+				Updated: {updated}
+			{/if}
+		</div>
+		<img
+			class="w-full rounded-lg shadow-lg mb-8"
+			src={coverImage}
+			alt=""
+			style="aspect-ratio: {coverWidth} / {coverHeight};"
+			width={coverWidth}
+			height={coverHeight}
+		/>
+	</section>
 
-	<h1>{title}</h1>
-
-	<div class="meta">
-		<b>Published:</b>
-		{date}
-		<br />
-		<b>Updated:</b>
-		{updated}
-	</div>
-
-	<svelte:component this={PostContent} />
+	<main class="prose prose-slate mx-auto 
+		prose-headings:font-medium prose-headings:tracking-tight
+		prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
+		prose-p:text-lg prose-p:leading-relaxed prose-p:my-6
+		prose-img:rounded-md prose-img:shadow-md
+		prose-blockquote:text-lg prose-blockquote:border-l-2 prose-blockquote:border-slate-300 prose-blockquote:pl-4
+		prose-code:text-sm prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
+		prose-pre:bg-slate-900
+		prose-a:text-blue-600 prose-a:no-underline hover:prose-a:text-blue-800
+		max-w-none
+		dark:prose-invert dark:prose-blockquote:border-slate-700
+		dark:prose-code:bg-slate-800">
+		<svelte:component this={PostContent} />
+	</main>
 
 	{#if categories}
-		<aside class="post-footer">
-			<h2>Posted in:</h2>
-			<ul class="post-footer__categories">
+		<footer class="mt-16 pt-8 border-t border-slate-200 dark:border-slate-800">
+			<div class="flex flex-wrap gap-2">
 				{#each categories as category}
-					<li>
-						<a href="/blog/category/{category}/">
-							{category}
-						</a>
-					</li>
+					<a
+						href="/blog/category/{category}/"
+						class="px-3 py-1 text-sm rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-colors"
+					>
+						{category}
+					</a>
 				{/each}
-			</ul>
-		</aside>
+			</div>
+		</footer>
 	{/if}
 </article>

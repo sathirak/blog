@@ -2,11 +2,11 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-	body {
-		font-family: "Inconsolata", monospace;
-		font-optical-sizing: auto;
-        color: #333;
-		font-weight: 500;
-		font-style: normal;
-		font-variation-settings: "wdth" 100;
-	}
+body {
+	font-family: "Montserrat", sans-serif;
+	font-optical-sizing: auto;
+	color: #333;
+	font-weight: 500;
+	font-style: normal;
+	font-variation-settings: "wdth" 100;
+}

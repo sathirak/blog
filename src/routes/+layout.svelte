@@ -1,8 +1,8 @@
 <!-- This is the global layout file; it "wraps" every page on the site. (Or more accurately: is the parent component to every page component on the site.) -->
 <script>
 	import Header from '$lib/components/Header.svelte';
-	import Footer from '$lib/components/Footer.svelte';
 	import "../app.css";
+	import "../prism.css";
 	import { currentPage, isMenuOpen } from '../lib/assets/js/store.js';
 	import { navItems } from '$lib/config';
 	import { preloadCode } from '$app/navigation';
@@ -53,5 +53,4 @@
 			<slot />
 		</main>
 	{/key}
-	<Footer />
 </div>
