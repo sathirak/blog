@@ -2,7 +2,7 @@
 title: "The Best Linux Setup For Developers"
 date: "2024-12-13"
 updated: "2023-12-13"
-categories:
+collections:
   - "linux"
   - "debian"
 coverWidth: 16
