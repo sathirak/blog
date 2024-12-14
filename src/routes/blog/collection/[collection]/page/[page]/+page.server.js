@@ -4,11 +4,11 @@ import fetchPosts from '$lib/assets/js/fetchPosts'
 
 export const load = async ({ url, params, fetch }) => {
 	const page = parseInt(params.page) || 1
-	const { category } = params
+	const { collection } = params
 
 	// Prevents duplication of page 1 as the index page
 	if (page <= 1) {
-		redirect(301, `/blog/category/${category}`);
+		redirect(301, `/blog/collection/${collection}`);
 	}
 	
 	let offset = (page * postsPerPage) - postsPerPage
@@ -20,7 +20,7 @@ export const load = async ({ url, params, fetch }) => {
 	return {
 		posts,
 		page,
-		category,
+		collection,
 		totalPosts: total 
 	}
 }

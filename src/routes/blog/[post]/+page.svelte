@@ -4,7 +4,7 @@
 
 	const {
 		PostContent,
-		meta: { title, excerpt, date, updated, coverWidth, coverHeight, categories, slug }
+		meta: { title, excerpt, date, updated, coverWidth, coverHeight, collections, slug }
 	} = data;
 </script>
 
@@ -29,10 +29,10 @@
 		<div class="text-slate-600 dark:text-slate-400 mb-8 text-sm tracking-wide uppercase">
 			{date}
 
-			{#each categories as category}
+			{#each collections as collection}
 				<span class="mx-2">•</span>
-				<a href="/blog/category/{category}/" class=" hover:underline underline-offset-2">
-					{category}
+				<a href="/blog/collection/{collection}/" class=" hover:underline underline-offset-2">
+					{collection}
 				</a>
 			{/each}
 			{#if updated !== date}

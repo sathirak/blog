@@ -4,15 +4,17 @@
 </script>
 
 <header class="flex flex-col">
-	<div class=" flex items-center py-4 gap-4">
-		<a href="/" class=" flex items-center mx-8 gap-4">
-			<img src="/images/logo.png" alt="sathirak logo" class=" size-10" />
-			<h1 class="text-xl font-semibold tracking-wide">SathiraK</h1>
-		</a>
+	<div class=" flex items-center py-4 gap-4 justify-between">
+		<div class="flex items-center">
+			<a href="/" class=" flex items-center mx-8 gap-4">
+				<img src="/images/logo.png" alt="sathirak logo" class=" size-10" />
+				<h1 class="text-xl font-semibold tracking-wide">SathiraK</h1>
+			</a>
 
-		<nav class="hidden md:flex flex-1 justify-center" class:open={$isMenuOpen}>
-			<NavItems />
-		</nav>
+			<nav class="hidden md:flex" class:open={$isMenuOpen}>
+				<NavItems />
+			</nav>
+		</div>
 
 		<div class="flex items-center">
 			<a href="https://github.com/sathirak" class="mr-8">

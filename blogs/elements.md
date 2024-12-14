@@ -2,7 +2,7 @@
 title: "Markdown Elements Example"
 date: "2023-10-26"
 updated: "2023-10-26"
-categories:
+collections:
   - "markdown"
   - "reference"
 coverImage: "/images/blog/elements.png"

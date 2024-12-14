@@ -2,7 +2,7 @@
 title: "Getting Started With Choreo"
 date: "2024-12-14"
 updated: "2024-12-14"
-categories:
+collections:
   - "devops"
   - "wso2"
   - "choreo"
