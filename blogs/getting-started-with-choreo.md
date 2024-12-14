@@ -48,4 +48,4 @@ And it's done and dusted, go to the `Web App URL` and then tadaaa!
 
 ![Application succesfully deployed](/images/blog/choreo-complete.png)
 
-That's a successful deployment! Easy Peasy Lemon Squeezy!
+That's a successful deployment! *Easy Peasy Lemon Squeezy!*
