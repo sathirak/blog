@@ -23,7 +23,6 @@ const config = {
 		}),
 	],
 	kit: {
-		alias: { $blogs: '/blogs' },
 		adapter: adapter(),
 	}
 };

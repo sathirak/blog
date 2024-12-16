@@ -4,5 +4,5 @@
 		"src/**/*.d.ts",
 		"src/**/*.js",
 		"src/**/*.svelte"
-	]
+, "src/consts.json", "src/consts.json"	]
 }
