@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>SathiraK's Blogs</title>
+	<title>Sathira's Blogs</title>
 	<meta data-key="description" name="description" content={siteDescription} />
 </svelte:head>
 

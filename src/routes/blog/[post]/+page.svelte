@@ -28,17 +28,15 @@
 		<h1 class="text-4xl md:text-3xl font-medium uppercase mb-4 tracking-tight">{title}</h1>
 		<div class="text-slate-600 dark:text-slate-400 mb-8 text-sm tracking-wide uppercase">
 			{date}
-
+			{#if updated !== date}
+				, Updated
+			{/if}
 			{#each collections as collection}
 				<span class="mx-2">•</span>
 				<a href="/blog/collection/{collection}/" class=" hover:underline underline-offset-2">
 					{collection}
 				</a>
 			{/each}
-			{#if updated !== date}
-				<span class="mx-2">•</span>
-				Updated: {updated}
-			{/if}
 		</div>
 		<img
 			class="w-full shadow-lg mb-8 object-cover"

@@ -8,7 +8,7 @@
 		<div class="flex items-center">
 			<a href="/" class=" flex items-center mx-8 gap-4">
 				<img src="/images/logo.png" alt="sathirak logo" class=" size-10" />
-				<h1 class="text-xl font-semibold tracking-wide">SathiraK</h1>
+				<h1 class="text-xl font-semibold tracking-wide">Sathira's Grotto</h1>
 			</a>
 
 			<nav class="hidden md:flex" class:open={$isMenuOpen}>
