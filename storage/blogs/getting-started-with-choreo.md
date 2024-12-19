@@ -4,8 +4,8 @@ date: "2024-12-14"
 updated: "2024-12-16"
 collections:
   - "devops"
-  - "wso2"
-  - "choreo"
+  - "guide"
+  - "devlog"
 coverWidth: 16
 coverHeight: 9
 status: "published"

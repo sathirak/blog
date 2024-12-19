@@ -1,6 +1,6 @@
 <!-- Renders any page at /blog/category/* -->
 <script>
-	import PostCollectionCard from '$lib/components/PostCollectionCard.svelte';
+	import PostCollectionCard from '$lib/components/BlogCollectionCard.svelte';
 	export let data;
 	const { posts } = data;
 

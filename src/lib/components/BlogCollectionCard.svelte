@@ -9,13 +9,13 @@
         <div class="w-full" style="aspect-ratio: 1514 / 1036">
             {#if posts.length > 1}
                 <div class="grid grid-cols-2 gap-2 h-full">
-                    {#each posts.slice(0, 2) as post}
+                    {#each posts.slice(0, 2) as post, i}
                         <img
                             src="/images/blog/main/{post.slug}.png"
                             alt=""
                             width={post.coverWidth}
                             height={post.coverHeight}
-                            class="w-full h-full object-cover"
+                            class="w-full h-full object-cover {i === 0 ? 'rounded-l-lg' : 'rounded-r-lg'}"
                         />
                     {/each}
                 </div>
@@ -25,7 +25,7 @@
                     alt=""
                     width={posts[0].coverWidth}
                     height={posts[0].coverHeight}
-                    class="w-full h-full object-cover"
+                    class="w-full h-full object-cover rounded-lg"
                 />
             {/if}
         </div>

@@ -8,7 +8,6 @@
 	import { preloadCode } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-	import { siteTitle, siteURL } from '$lib/config.js';
 	export let data;
 
 	const transitionIn = { delay: 150, duration: 150 };
@@ -32,15 +31,6 @@
 		preloadCode(...navRoutes);
 	});
 </script>
-
-<svelte:head>
-	<link
-		rel="alternate"
-		type="application/rss+xml"
-		title={siteTitle}
-		href="http://{siteURL}/api/rss.xml"
-	/>
-</svelte:head>
 
 <!--
 	The below markup is used on every page in the site. The <slot> is where the page's

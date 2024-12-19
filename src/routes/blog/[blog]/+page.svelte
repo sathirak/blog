@@ -23,6 +23,37 @@
 	<!-- <meta name="twitter:image" content="https://yourdomain.com/image_path" /> -->
 </svelte:head>
 
+<style>
+    :global(.prose code:hover:not(pre code)) {
+        background: linear-gradient(
+            45deg,
+            rgba(255, 154, 158, 0.2),
+            rgba(254, 207, 147, 0.2),
+            rgba(255, 255, 157, 0.2),
+            rgba(150, 247, 197, 0.2),
+            rgba(145, 226, 237, 0.2),
+            rgba(187, 187, 241, 0.2)
+        );
+        transition: background-color 0.3s ease;
+    }
+
+    :global(.prose a:hover) {
+        background: linear-gradient(
+            45deg,
+            rgba(255, 154, 158, 0.2),
+            rgba(254, 207, 147, 0.2),
+            rgba(255, 255, 157, 0.2),
+            rgba(150, 247, 197, 0.2),
+            rgba(145, 226, 237, 0.2),
+            rgba(187, 187, 241, 0.2)
+        );
+        text-decoration: none !important;
+        border-radius: 4px;
+        padding: 2px 4px;
+        margin: 0 -4px;
+    }
+</style>
+
 <article class="max-w-2xl mx-auto px-4 py-12">
 	<section class="mb-12 text-center">
 		<h1 class="text-4xl md:text-3xl font-medium uppercase mb-4 tracking-tight">{title}</h1>
@@ -39,7 +70,7 @@
 			{/each}
 		</div>
 		<img
-			class="w-full shadow-lg mb-8 object-cover"
+			class="w-full shadow-lg mb-8 object-cover rounded-xl"
 			src="/images/blog/main/{slug}.png"
 			alt=""
 			style="aspect-ratio: 1 / 1;"
@@ -49,13 +80,13 @@
 	</section>
 
 	<main
-		class="prose prose-slate mx-auto
+		class="prose prose-slate mx-auto w-11/12 mg:w-full
 		prose-headings:font-medium prose-headings:tracking-tight
 		prose-h1:prose-a:hidden prose-h2:prose-a:hidden prose-h3:prose-a:hidden prose-h4:prose-a:hidden prose-h5:prose-a:hidden prose-h6:prose-a:hidden
 		prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
 		prose-p:text-lg prose-p:leading-relaxed prose-p:my-6
 		prose-p:font-light
-		prose-img: prose-img
+		prose-img:rounded-lg
 		prose-blockquote:text-lg prose-blockquote:border-l-2 prose-blockquote:border-slate-300 prose-blockquote:pl-4
 		prose-code:px-2 prose-code:py-0.5
 		prose-code:bg-slate-100
@@ -64,6 +95,8 @@
 		prose-code:text-[0.9em]
 		prose-code:font-normal
 		prose-code:before:content-none prose-code:after:content-none
+		prose-code:select-none
+		prose-code:transition-colors prose-code:duration-300
 		prose-pre:bg-slate-900
 		prose-pre:p-4
 		prose-pre:rounded-lg
@@ -74,7 +107,8 @@
 		prose-pre:code:bg-transparent
 		prose-pre:code:p-0
 		prose-pre:code:text-slate-200
-		prose-a:text-cyan-600 prose-a:font-normal prose-a:no-underline hover:prose-a:underline hover:prose-a:text-cyan-800
+		prose-a:text-cyan-600 prose-a:font-normal prose-a:no-underline prose-a:transition-colors prose-a:duration-300
+		hover:prose-a:underline hover:prose-a:text-cyan-800
 		max-w-none
 		dark:prose-invert
 		dark:prose-blockquote:border-slate-700

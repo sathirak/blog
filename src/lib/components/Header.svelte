@@ -16,7 +16,7 @@
 			</nav>
 		</div>
 
-		<div class="flex items-center">
+		<div class="md:flex hidden items-center">
 			<a href="https://github.com/sathirak" class="mr-8">
 				<img src="/images/github.png" alt="Github Logo" class=" size-8" />
 			</a>
@@ -28,5 +28,13 @@
 	</div>
 	<nav class="md:hidden flex w-full justify-center pb-4" class:open={$isMenuOpen}>
 		<NavItems />
+
+		<a href="https://github.com/sathirak" class="mx-8">
+			<img src="/images/github.png" alt="Github Logo" class=" size-8" />
+		</a>
+
+		<a href="https://linkedin.com/in/sathirak" class="mr-8">
+			<img src="/images/linkedin.png" alt="LinkedIn Logo" class=" size-8" />
+		</a>
 	</nav>
 </header>

@@ -1,5 +1,5 @@
 <script>
-	import PostCard from './PostCard.svelte';
+	import PostCard from './BlogCard.svelte';
 	export let posts = [];
 </script>
 
@@ -10,7 +10,6 @@
 				<a href="/blog/{post.slug}">
 					<PostCard {post} />
 				</a>
-				<p class="text-base md:text-lg text-slate-600 font-extralight">{post.excerpt}</p>
 			</article>
 		</li>
 	{/each}
